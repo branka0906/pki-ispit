@@ -64,4 +64,5 @@ mat-card-title {
 }
 .return {
     color: #343131 !important;
+    text-decoration: underline;
 }

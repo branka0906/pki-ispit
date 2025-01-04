@@ -1,13 +1,12 @@
 <mat-toolbar>
     <div><a routerLink="/"><mat-icon>movie</mat-icon>MovieTourApp</a></div>
     <div class="header">
-    <div><a routerLink="/login"><mat-icon>account_circle</mat-icon>Uloguj se</a></div>
+    <div><a routerLink="/login"><mat-icon>login</mat-icon>Uloguj se</a></div>
     </div>
     </mat-toolbar>
-    <mat-card>
-        <mat-card-content apearance="outlined">
-            <mat-card-title>Registracija</mat-card-title>
-<section>
+     <mat-card>
+    <mat-card-content apearance="outlined">
+    <section>
     <form #f="ngForm" (ngSubmit)="onSubmit(f)">
         <mat-form-field>
         <input matInput placeholder="Unesite svoje ime" ngModel name="text" #emailInput="ngModel" required>
@@ -36,7 +35,7 @@
       <mat-checkbox ngModel name="accept" required>Prihvatam uslove koriscenja.</mat-checkbox>
       <button type="submit" mat-raised-button  [disabled]="f.invalid"> Registruj se</button>
       <mat-label *ngIf="errorExists">{{errorText}}</mat-label>
-      <a class="return" href routerLink="/login">Vrati se nazad na prijavu.</a>
+      <a href class="return" href routerLink="/login">Vrati se nazad na prijavu.</a>
     
     </form>
 </section>
