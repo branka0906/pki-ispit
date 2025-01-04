@@ -49,3 +49,19 @@ button {
     background-color: #343131 !important;
     color: beige !important;
 }
+mat-card {
+ width: 400px;
+    height: 680px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    
+}
+mat-card-title {
+    margin-bottom: 10px;
+    color: beige;
+    align-items: center;
+}
+.return {
+    color: #343131 !important;
+}

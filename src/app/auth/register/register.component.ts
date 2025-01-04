@@ -12,6 +12,7 @@ import { NgIf } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
 
 
 @Component({
@@ -26,7 +27,8 @@ import { RouterLink } from '@angular/router';
             NgIf,
             MatToolbarModule,
              MatIconModule,
-            RouterLink],
+            RouterLink, 
+            MatCardModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
