@@ -16,8 +16,7 @@
         <input type="password" matInput placeholder="Unesite lozinku" ngModel="password" name="password" required minlength="8"
       #passInput="ngModel">
       <mat-hint align="end">{{passInput.value?.length}} / 8 </mat-hint>
-      <mat-error *ngIf="passInput.hasError('required')">Polje ne može biti prazno.</mat-error>
-    </mat-form-field>
+     </mat-form-field>
     <mat-form-field>
         <input  matInput placeholder="Unesite adresu" ngModel="address" name="address" required name="text"
       #addrInput="ngModel">
