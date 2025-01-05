@@ -1,1 +1,22 @@
-<p>home works!</p>
+<div class="container">
+    <mat-toolbar>
+        <div><a routerLink="/home"><mat-icon>movie</mat-icon>MovieTourApp</a></div>
+    
+
+<div class="nav">
+    <a routerLink="/search"><mat-icon>search</mat-icon></a>
+  </div>
+    <a routerLink="/">Izloguj se</a>
+</mat-toolbar>
+<mat-tab-group>
+    <mat-tab label="U BIOSKOPU">
+      <app-in-cinema></app-in-cinema>
+    </mat-tab>
+    <mat-tab label="PREPORUCENO">
+      <app-recomended></app-recomended>
+    </mat-tab>
+    <mat-tab label="USKORO">
+      <app-soon></app-soon>
+    </mat-tab>
+  </mat-tab-group>
+</div>

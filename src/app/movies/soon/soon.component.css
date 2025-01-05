@@ -1,0 +1,35 @@
+.kartica {
+    width: 330px;
+    height: 560px;
+    margin: 0 auto;
+    background-color: beige;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+.kartica img {
+    height: 370px;
+    width: 328px;
+}
+mat-card-content .naslov {
+    font-size: 20px;
+    font-weight: bold;
+}
+.kartica mat-card-actions {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: #322d2d;
+}
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    color: #322d2d;
+ 
+}
+
+mat-card-content > p {
+    font-size: 18px;
+}

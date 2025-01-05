@@ -1,1 +1,15 @@
-<p>recomended works!</p>
+<section>
+    <mat-card class="kartica" *ngFor="let movie of movies">
+        <img mat-card-image [src]="movie.slikaUrl" alt="slika">
+        <mat-card-content>
+            <p></p>
+            <p class="naslov">{{movie.ime}}</p>
+            <p>Datum prikazivanja: {{ movie.datumPrikazivanja | date:'dd.MM.yyyy'}}</p>
+          <p><mat-icon>star</mat-icon>{{ movie.recenzijeKorisnika}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button type="button" mat-raised-button routerLink="/login">Rezervisi<mat-icon>add</mat-icon>
+           </button>
+        </mat-card-actions>
+        </mat-card>
+</section>

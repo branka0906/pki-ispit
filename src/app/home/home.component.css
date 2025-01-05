@@ -1,0 +1,25 @@
+mat-toolbar {
+    background-color: #343131; 
+    margin-left: auto;
+    margin-right: auto;
+
+}
+a {
+    color: beige;
+    text-decoration: none;
+}
+a:hover {
+    color: black;
+}
+mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+mat-tab-group {
+    width: 1700px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+}

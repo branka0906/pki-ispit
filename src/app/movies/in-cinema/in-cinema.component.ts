@@ -1,11 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MovieService } from '../movie.service';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-in-cinema',
-  imports: [],
+  imports: [MatCardModule, MatIconModule, CommonModule, MatButtonModule],
   templateUrl: './in-cinema.component.html',
-  styleUrl: './in-cinema.component.css'
+  styleUrl: './in-cinema.component.css',
+  providers: [MovieService]
 })
-export class InCinemaComponent {
+export class InCinemaComponent implements OnInit{
+    movies: any[]=[];
 
+    constructor (private movieService: MovieService){}
+
+    ngOnInit(): void {
+      this.movies = this.movieService.getMovies();
+    }
 }

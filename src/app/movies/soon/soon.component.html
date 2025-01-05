@@ -1,1 +1,12 @@
-<p>soon works!</p>
+<section>
+    <mat-card class="kartica" *ngFor="let movie of movies">
+        <img mat-card-image [src]="movie.slikaUrl" alt="slika">
+        <mat-card-content>
+            <p></p>
+            <p class="naslov">{{movie.ime}}</p>
+            <p>Izlazi: {{ movie.datumIzlaska}}</p>
+            <p>Datum prikazivanja: {{ movie.datumPrikazivanja | date:'dd.MM.yyyy'}}</p>
+            <p>Režiser: {{movie.reziser}}</p>
+          </mat-card-content>
+        </mat-card>
+</section>
