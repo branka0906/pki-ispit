@@ -1,7 +1,12 @@
 <div class="container">
     <mat-toolbar>
         <div><a routerLink="/home"><mat-icon>movie</mat-icon>MovieTourApp</a></div>
-    
+        <div *ngIf="userService.currentUser">
+            <button mat-raised-button (click)="openProfile(userService.currentUser.id)">
+              <mat-icon>person</mat-icon>
+              {{userService.currentUser.email}}
+            </button>
+          </div>
 
 <div class="nav">
     <a routerLink="/search"><mat-icon>search</mat-icon></a>
