@@ -12,14 +12,14 @@ mat-form-field {
    width: 350px;
   }
   mat-card {
-    width: 400px;
-    height: 350px;
+    width: 500px;
+    height: 420px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
   }
   mat-toolbar {
-    background-color:#343131!important; 
+    background-color: #343131!important; 
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -38,7 +38,7 @@ a:hover {
     display: flex;
 }  
 .header {
-    display: flex imo !important;
+    display: flex !important;
     justify-content: space-between !important;
     margin-top: 5px;
 }
@@ -51,10 +51,11 @@ a:hover {
     margin-right: 5px;
 }
 button {
-    background-color: #343131 !important;
-    color: beige !important;
+    background-color: gray !important;
+    color: black !important;
 }
 .register {
+    padding-top: 20px;
     color: black !important;
     text-decoration: underline;
 }

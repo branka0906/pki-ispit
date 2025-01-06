@@ -12,24 +12,63 @@
     <form #editForm="ngForm" (ngSubmit)="finishEditing(editForm)">
         <mat-card>
             <div class="row">
-                <mat-icon>mail</mat-icon>
+                <mat-icon>person</mat-icon>
                 <div class="column" [hidden]="!this.isEditing">
-                        <mat-card-subtitle>Email:</mat-card-subtitle>
+                        <mat-card-subtitle>Ime:</mat-card-subtitle>
                         </div>
                     <mat-form-field [hidden]="this.isEditing">
                         <input matInput
-                        type="email"
-                        name="email" 
-                        placeholder="Unesite email" 
+                        type="text"
+                        name="name" 
+                        placeholder="Unesite svoje ime" 
                         ngModel
-                        [(ngModel)]="this.profileForInput.email"
+                        [(ngModel)]="this.profileForInput.ime"
                         email
                         required
-                        #emailInput="ngModel">
-                   <mat-error *ngIf="emailInput.hasError('required')">Email je obavezan!</mat-error>
+                        #imeInput="ngModel">
+                   <mat-error *ngIf="imeInput.hasError('required')">Ime je obavezno!</mat-error>
                     </mat-form-field>
                 </div>
         </mat-card>
+        <mat-card>
+           <div class="row">
+                <mat-icon>person</mat-icon>
+                <div class="column" [hidden]="!this.isEditing">
+                        <mat-card-subtitle>Prezime:</mat-card-subtitle>
+                        </div>
+                    <mat-form-field [hidden]="this.isEditing">
+                        <input matInput
+                        type="text"
+                        name="prezime" 
+                        placeholder="Unesite vaše prezime" 
+                        ngModel
+                        [(ngModel)]="this.profileForInput.prezime"
+                        required
+                        #prezimeInput="ngModel">
+                   <mat-error *ngIf="prezimeInput.hasError('required')">Prezime je obavezno</mat-error>
+                    </mat-form-field>
+                </div>
+        </mat-card>
+        <mat-card>
+            <div class="row">
+                 <mat-icon>mail</mat-icon>
+                 <div class="column" [hidden]="!this.isEditing">
+                         <mat-card-subtitle>Email:</mat-card-subtitle>
+                         </div>
+                     <mat-form-field [hidden]="this.isEditing">
+                         <input matInput
+                         type="text"
+                         name="email" 
+                         placeholder="Unesite vaše email" 
+                         ngModel
+                         [(ngModel)]="this.profileForInput.email"
+                         email
+                         required
+                         #emailInput="ngModel">
+                    <mat-error *ngIf="emailInput.hasError('required')">Email je obavezan</mat-error>
+                     </mat-form-field>
+                 </div>
+         </mat-card>
         <mat-card>
             <div class="row">
                 <mat-icon>lock</mat-icon>

@@ -4,9 +4,6 @@
     margin: 20px 0;
     width: 300px;
 }
-
-
-
 mat-icon {
     color:  #1976d2;
     font-size: 20px;
@@ -23,11 +20,12 @@ mat-card{
 mat-form-field {
     flex: 1;
     margin-left: 10px;
-    width: 250px !important;
+    width: 280px !important;
 }
 mat-form-field  > input {
     padding: 12px;
     font-size: 16px;
+    
    
     
 }
@@ -39,17 +37,21 @@ mat-error {
     margin-left: 15px;
     margin-right: 10px;
     padding: 12px 24px;
-    width: 35px;
+    width: 20px;
     height: 35px;
-    color: black;
+    background-color:#343131 !important;
+;
+    
    
 }
 .wrapper > .edit{
     font-size: 24px;
-    width: 70px;
-    height: 70px;
+    width: 40px;
+    height: 40px;
     font-size: 16px;
-    padding-top: 5px;
+    margin-top: 20px;
+    background-color:#343131 !important;
+   
 }
 mat-dialog-content {
     width: 500px;
@@ -59,5 +61,14 @@ mat-dialog-content {
 }
 mat-card-subtitle {
     color: black !important;
+    margin-right: 10px;
 }
-
+.wrapper > .close > mat-icon {
+    color: beige ;
+    font-size: 20px;
+   
+}
+.wrapper > .edit > mat-icon{
+    color: beige;
+   
+}

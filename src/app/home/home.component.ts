@@ -10,9 +10,10 @@ import { UserService } from '../auth/user.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ProfileComponent } from '../auth/profile/profile.component';
 import { NgIf } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
 @Component({
   selector: 'app-home',
-  imports: [MatToolbar, MatIconModule, MatTabsModule, InCinemaComponent, SoonComponent,RecomendedComponent, RouterLink, NgIf],
+  imports: [MatToolbar, MatIconModule, MatTabsModule, InCinemaComponent, SoonComponent,RecomendedComponent, RouterLink, NgIf, MatButtonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   providers: [UserService]

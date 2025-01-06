@@ -1,0 +1,40 @@
+<mat-toolbar class="toolbar">
+    <div class="left-side">
+        <a routerLink="/home"><mat-icon>movie</mat-icon>MovieTourApp</a>
+        <div *ngIf="userService.currentUser">
+          <button mat-raised-button color="warn" (click)="openProfile(userService.currentUser.id)"><mat-icon>person</mat-icon>
+            {{userService.currentUser.email}}
+          </button>
+        </div>
+      </div>
+<div class="right-side">
+    <a routerLink="/"><button mat-raised-button>Izloguj se</button></a>
+   </div>
+</mat-toolbar>
+<div class="wrapper">
+    <div class="left">
+        <mat-form-field appearance="outline">
+            <mat-label><mat-icon>search</mat-icon></mat-label>
+            <input matInput [(ngModel)]="search" (keyup)="searchChange()" placeholder="Unesite naziv filma" name="search">
+     </mat-form-field>
+     <p>FILMOVI(15)</p>
+     <mat-card class="card" appearance="outlined" *ngFor="let movie of filteredMovies">
+        <div class="container-card">
+            <img class="image" mat-card-image [src]="movie.slikaUrl" alt="{{movie.ime}}">
+            <div class="card-content">
+                <mat-card-title>{{movie.ime}} ({{movie.datumIzlaska}})</mat-card-title>
+                <mat-card-subtitle>Žanr: {{ movie.zanr }}</mat-card-subtitle>
+                <p>{{movie.trajanje}}</p>
+                <p>{{movie.opis}}</p>
+                <p>Datum prikazivanja: {{movie.datumPrikazivanja | date: 'dd.MM.yyyy'}}</p>
+                <p>Režiser: {{movie.reziser}}</p>
+                <p>Glumci: {{movie.glumci.join(', ')}}</p>
+                <p><mat-icon>star</mat-icon>{{movie.recenzijeKorisnika}}</p>
+                <p>Cena karte: {{movie.cenaKarte}}</p>
+                <button mat-raised-button > Rezerviši</button>
+            </div>
+        </div>
+     </mat-card>
+
+    </div>
+</div>

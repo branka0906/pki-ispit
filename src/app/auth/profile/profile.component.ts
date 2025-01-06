@@ -26,6 +26,8 @@ export class ProfileComponent implements OnInit{
   ngOnInit(): void {
       this.profileForInput = {
       id: this.data.user.id,
+      ime: this.data.user.ime,
+      prezime: this.data.user.prezime,
       email: this.data.user.email,
       password: this.data.user.password,
       address: this.data.user.address,
@@ -36,6 +38,8 @@ export class ProfileComponent implements OnInit{
   }
 
   finishEditing (form: NgForm): void {
+    this.data.user.ime = this.profileForInput.ime;
+    this.data.user.prezime = this.profileForInput.prezime;
     this.data.user.email = this.profileForInput.email;
     this.data.user.password = this.profileForInput.password;
     this.data.user.address = this.profileForInput.address;

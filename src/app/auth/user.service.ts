@@ -2,11 +2,16 @@ import { Injectable } from "@angular/core";
 
 export interface User {
     id: number;
-    email: string;
-    password: string;
+    ime: string;
+    prezime: string;
     address: string;
     contact: string;
     date: Date;
+    email: string;
+    password: string;
+   
+    
+    
 }
 
 @Injectable ()
@@ -16,40 +21,47 @@ export class UserService {
     static userlist: Array<User> = [
         {
             id: 1,
-            email: "bkrcijevic@gmail.com",
-            password: "1111",
+            ime: 'Branka',
+            prezime: 'Krcijevic',
             date: new Date ('2024-12-29 13:53'),
             address: 'Neka adresa',
-            contact: '061111111'
+            contact: '061111111',
+            email: "bkrcijevic@gmail.com",
+            password: "11111111"
 
 
         },
 
         {
             id: 2,
-            email: "petar@gmail.com",
-            password: "2222",
+            ime: 'Petar',
+            prezime: 'Petrovic',
             address: 'Neka adresa 2',
             contact: '061222222',
-            date: new Date ('2024-12-29 13:54')
+            date: new Date ('2024-12-29 13:54'),
+            email: "petar@gmail.com",
+            password: "22222222"
+            
       },
       {
-            id: 3,
-            email: "marko@gmail.com",
-            password: "3333",
-            date: new Date ('2024-12-29 13:55'),
-            address: 'Neka adresa 3',
-            contact: '061333333'
-
+        id: 3,
+        ime: 'Marko',
+        prezime: 'Markovic',
+        address: 'Neka adresa 3',
+        contact: '061333333',
+        date: new Date ('2024-12-29 13:55'),
+        email: "marko@gmail.com",
+        password: "33333333"
       },
       {
-            id: 4,
-            email: "darko@gmail.com",
-            password: "4444",
-            date: new Date ('2024-12-29 13:56'),
-            address: 'Neka adresa 4',
-            contact: '061444444'
-
+        id: 4,
+        ime: 'Darko',
+        prezime: 'markovic',
+        address: 'Neka adresa 4',
+        contact: '061444444',
+        date: new Date ('2024-12-29 13:56'),
+        email: "darko@gmail.com",
+        password: "44444444"
       }
 
     ];
@@ -81,7 +93,7 @@ export class UserService {
     isPasswordCorrect(userEmail: string, password: string): boolean {
         return UserService.userlist.find(userToFind => (userToFind.email == userEmail && userToFind.password == password)) != undefined; 
     }
-    registerUser(email: string, password: string, date: Date, address: string, contact: string): User {
+    registerUser(ime: string, prezime: string, email: string, password: string, date: Date, address: string, contact: string): User {
         var maxId: number = 0;
 
         UserService.userlist.forEach(user => {
@@ -92,7 +104,7 @@ export class UserService {
 
         var id = ++maxId;
         var user: User ={
-            id, email, password, date, contact, address
+            id, ime, prezime, email, password, date, contact, address
         };
 
         UserService.userlist.push(user);

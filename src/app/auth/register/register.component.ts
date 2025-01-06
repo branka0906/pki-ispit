@@ -13,6 +13,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
+import { UserService } from '../user.service';
 
 
 @Component({
@@ -30,16 +31,25 @@ import { MatCardModule } from '@angular/material/card';
             RouterLink, 
             MatCardModule],
   templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
+  styleUrl: './register.component.css',
+  providers: [UserService]
 })
 export class RegisterComponent {
   errorExists= false;
   errorText= "";
 
-  constructor(private router: Router){}
+  constructor(private router: Router, private userService: UserService){}
   
-  onSubmit (form: NgForm){
-    
-  }
+      onSubmit(form: NgForm){
+      if(!this.userService.getUser(form.value.email)){
+       this.errorExists = false;
+       var newUser = this.userService.registerUser(form.value.ime, form.value.prezime, form.value.address, form.value.contact, form.value.email, form.value.password, form.value.dateBirth);
+
+       this.router.navigate(['/home']);
+     } else {
+       this.errorExists = true;
+       this.errorText = "Korisnik sa datom mejl adresom vec postoji";
+     }
+   }
 
 }

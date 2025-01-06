@@ -8,8 +8,16 @@
     <mat-card-content apearance="outlined">
     <section>
     <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <mat-form-field>
+        <input matInput placeholder="Unesite svoje ime" ngModel name="text" #imelInput="ngModel" required>
+        <mat-error *ngIf="imelInput.hasError('required')">Polje ne može biti prazno.</mat-error>
+    </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Unesite svoje prezime" ngModel name="text" #prezimeInput="ngModel" required>
+        <mat-error *ngIf="prezimeInput.hasError('required')">Polje ne može biti prazno.</mat-error>
+    </mat-form-field>
         <mat-form-field>
-        <input matInput placeholder="Unesite svoje ime" ngModel name="text" #emailInput="ngModel" required>
+        <input matInput placeholder="Unesite svoju email adresu" ngModel name="text" #emailInput="ngModel" required>
         <mat-error *ngIf="emailInput.hasError('required')">Polje ne može biti prazno.</mat-error>
     </mat-form-field>
     <mat-form-field>

@@ -441,4 +441,7 @@ export class MovieService {
     getSoon (){
         return this.soon;
     }
+    getFilteredMovies(search: string): Movie [] {
+        return this.movies.filter (movie => movie.ime.toLocaleLowerCase().includes(search.toLocaleLowerCase()));
+    }
 }

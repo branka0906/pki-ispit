@@ -23,3 +23,6 @@ mat-tab-group {
     margin-right: auto;
     padding-top: 30px;
 }
+button {
+    color: #343131 !important;
+}

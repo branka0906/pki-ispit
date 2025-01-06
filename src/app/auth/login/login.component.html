@@ -18,9 +18,9 @@
         #passInput="ngModel">
         <mat-hint align="end">{{passInput.value?.length}} / 8 </mat-hint>
       </mat-form-field>
-        <button type="submit" mat-raised-button color="warn" [disabled]="f.invalid"> Prijavi se</button>
+        <button type="submit" mat-raised-button [disabled]="f.invalid"> Prijavi se</button>
         <mat-label *ngIf="errorExists">{{errorText}}</mat-label>
-        <a class="register" routerLink="/signup" >Nemate nalog? Registrujte se.</a>
+        <a class="register" routerLink="/register" >Nemate nalog? Registrujte se.</a>
       </form>
      </section>
     </mat-card-content>
