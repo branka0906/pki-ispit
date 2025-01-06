@@ -423,12 +423,7 @@ export class MovieService {
                 datumIzlaska: 2025, 
                 cenaKarte: 800, 
                 recenzijeKorisnika: 0
-            }
-
-
-
-        
-
+            }   
             
     ]
 
@@ -444,4 +439,74 @@ export class MovieService {
     getFilteredMovies(search: string): Movie [] {
         return this.movies.filter (movie => movie.ime.toLocaleLowerCase().includes(search.toLocaleLowerCase()));
     }
-}
+    getUniqueGenres (): string []{
+        const genres : string [] = [];
+        this.movies.forEach(movie =>{
+            if(!genres.includes(movie.zanr)){
+                genres.push(movie.zanr);
+            }
+        })
+        return genres;
+    }
+    getfilterMovieByGenre (genre: string): Movie []{
+        return this.movies.filter(movie => movie.zanr === genre);
+    }
+    getUniqueDirectors(): string []{
+        const directors: string []=[];
+        this.movies.forEach(movie => {
+            if(!directors.includes(movie.reziser)){
+                directors.push(movie.reziser);
+            }
+        })
+        return directors;
+    }
+    getFilterDirector(director: string): Movie []{
+        return this.movies.filter(movie => movie.reziser === director)
+    }
+    getUniqueActors(): string []{
+        const actors: string []=[];
+        this.movies.forEach(movie => {
+            movie.glumci.forEach((actor : string) => {
+                if(!actors.includes(actor)){
+                    actors.push(actor);
+            }
+            
+            })
+        })
+        return Array.from(actors);
+    }
+    getFilterActor(actor: string): Movie []{
+        return this.movies.filter(movie => movie.glumci.includes(actor))
+    }
+    sortByPriceAsc (movies: Movie []): Movie [] {
+        return movies.slice().sort((a, b) => a.cenaKarte - b.cenaKarte)
+    
+      }
+      sortByPriceDesc (movies: Movie []): Movie [] {
+        return movies.slice().sort((a, b) => b.cenaKarte - a.cenaKarte)
+    
+    }
+    sortByTimeAsc (movies: Movie []): Movie [] {
+      return movies.slice().sort((a, b) => a.trajanje - b.trajanje)
+      }
+    sortByTimeDesc (movies: Movie []): Movie [] {
+        return movies.slice().sort((a, b) => b.trajanje- a.trajanje)
+        }
+    sortByRateAsc (movies: Movie []): Movie [] {
+          return movies.slice().sort((a, b) => a.recenzijeKorisnika - b.recenzijeKorisnika)
+    
+     }
+     sortByRateDesc (movies: Movie []): Movie [] {
+      return movies.slice().sort((a, b) => b.recenzijeKorisnika - a.recenzijeKorisnika)
+    
+    }
+    sortByDateAsc (movies: Movie []): Movie [] {
+      return movies.slice().sort((a, b) => a.datumIzlaska - b.datumIzlaska)
+    
+    }
+    sortByDateDesc (movies: Movie []): Movie [] {
+      return movies.slice().sort((a, b) => b.datumIzlaska - a.datumIzlaska)
+    
+    }
+
+    }

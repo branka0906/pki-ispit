@@ -35,6 +35,45 @@
             </div>
         </div>
      </mat-card>
+ </div>
+ <div class="right">
+    <form>
+        <p class="filter">Filter<mat-icon>filter_list</mat-icon></p>
+        <mat-chip-set aria-label="Genre selection">
+            <mat-chip *ngFor="let genre of getsearchGenre" (click)="onGenre(genre)">{{genre}}</mat-chip>
+        </mat-chip-set>
+        <mat-divider></mat-divider>
+        <mat-form-field>
+            <mat-label>Pretraga režisera</mat-label>
+            <mat-select [(ngModel)]="selectedDirector" (selectionChange)=onDirector() name="text">
+            <mat-option *ngFor="let director of directors" [value]="director">{{director}}</mat-option>
+        </mat-select>
+        </mat-form-field>
+        <mat-divider></mat-divider>
+        <mat-form-field>
+            <mat-label>Pretraga glumaca</mat-label>
+            <mat-select [(ngModel)]="selectedActor" (selectionChange)=onActor() name="text">
+            <mat-option *ngFor="let actor of actors" [value]="actor">{{actor}}</mat-option>
+        </mat-select>
+        </mat-form-field>
+        <mat-divider></mat-divider>
+        <p>Sortiranje</p>
+      <mat-chip-listbox class="mat-mdc-chip-set-stacked">
+        <mat-chip-option (click)="sortByPriceAsc()"> Cena karte - rastuce </mat-chip-option>
+        <mat-chip-option (click)="sortByPriceDesc()"> Cena karte - opadajuce</mat-chip-option>
+        <mat-chip-option (click)="sortByTimeAsc()"> Trajanje filma - rastuce </mat-chip-option>
+        <mat-chip-option (click)="sortByTimeDesc()"> Trajanje filma - opadajuce </mat-chip-option>
+        <mat-chip-option (click)="sortByDateAsc()"> Godina izlaska filma - rastuce </mat-chip-option>
+        <mat-chip-option (click)="sortByDateDesc()"> Godina izlaska filma - opadajuce </mat-chip-option>
+        <mat-chip-option (click)="sortByRateAsc()"> Recenzija - rastuce </mat-chip-option>
+        <mat-chip-option (click)="sortByRateDesc()"> Recenzija - opadajuce </mat-chip-option>
+        
+      </mat-chip-listbox>
+      <button class="style" mat-raised-button (click)="clearInput()">Obriši sve filtere</button>
 
-    </div>
+
+    </form>
+ </div>
+
+
 </div>
