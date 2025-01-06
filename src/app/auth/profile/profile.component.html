@@ -1,7 +1,7 @@
 <div class="wrapper">
     <button mat-raised-button class="close" [mat-dialog-close]="true">
         <mat-icon matListIcon>close</mat-icon>
-    </button>
+        </button>
     <button mat-icon-button class="edit" (click)="enableEdit()">
     <mat-icon *ngIf="this.profileForInput.id == this.UserService.currentUser?.id">
         edit

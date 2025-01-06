@@ -8,7 +8,7 @@
         </div>
       </div>
 <div class="right-side">
-    <a routerLink="/"><button mat-raised-button>Izloguj se</button></a>
+    <a routerLink="/"><button mat-raised-button><mat-icon>logout</mat-icon>Izloguj se</button></a>
    </div>
 </mat-toolbar>
 <div class="wrapper">
@@ -31,7 +31,7 @@
                 <p>Glumci: {{movie.glumci.join(', ')}}</p>
                 <p><mat-icon>star</mat-icon>{{movie.recenzijeKorisnika}}</p>
                 <p>Cena karte: {{movie.cenaKarte}}</p>
-                <button mat-raised-button > Rezerviši</button>
+                <button mat-raised-button> Rezerviši</button>
             </div>
         </div>
      </mat-card>
