@@ -5,6 +5,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './auth/profile/profile.component';
 import { SearchComponent } from './search/search.component';
+import { CartComponent } from './cart/cart.component';
 
 export const routes: Routes = [
     {path: '', component: WelcomeComponent},
@@ -12,5 +13,6 @@ export const routes: Routes = [
     {path: 'login', component: LoginComponent},
     {path: 'home', component: HomeComponent},
     {path: 'profile', component: ProfileComponent},
-    {path: 'search', component: SearchComponent}
+    {path: 'search', component: SearchComponent},
+    {path: 'cart', component: CartComponent}
 ];
