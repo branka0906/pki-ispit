@@ -1,17 +1,17 @@
-<div class="container">
-    <mat-toolbar>
-        <div><a routerLink="/home"><mat-icon>movie</mat-icon>MovieTourApp</a></div>
-        <div *ngIf="userService.currentUser">
-            <button mat-raised-button (click)="openProfile(userService.currentUser.id)">
-              <mat-icon>person</mat-icon>
-              {{userService.currentUser.email}}
-            </button>
-          </div>
-
-<div class="nav">
-    <a routerLink="/search"><mat-icon>search</mat-icon></a>
-  </div>
-    <a routerLink="/"><mat-icon>logout</mat-icon>Izloguj se</a>
+<mat-toolbar class="toolbar">
+  <div class="left-side">
+      <a routerLink="/home"><mat-icon>movie</mat-icon>MovieTourApp</a>
+      <div *ngIf="userService.currentUser">
+        <button mat-raised-button (click)="openProfile(userService.currentUser.id)"><mat-icon>person</mat-icon>
+          {{userService.currentUser.email}}
+        </button>
+      </div>
+    </div>
+<div class="right-side">
+  <a routerLink="/search"><mat-icon>search</mat-icon></a>
+  <a routerLink="/"><button mat-raised-button><mat-icon>logout</mat-icon>Izloguj se</button></a>
+  
+ </div>
 </mat-toolbar>
 <mat-tab-group>
     <mat-tab label="U BIOSKOPU">
@@ -24,4 +24,3 @@
       <app-soon></app-soon>
     </mat-tab>
   </mat-tab-group>
-</div>

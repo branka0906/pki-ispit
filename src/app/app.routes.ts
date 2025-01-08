@@ -12,7 +12,6 @@ export const routes: Routes = [
     {path: 'register', component: RegisterComponent},
     {path: 'login', component: LoginComponent},
     {path: 'home', component: HomeComponent},
-    {path: 'profile', component: ProfileComponent},
     {path: 'search', component: SearchComponent},
     {path: 'cart', component: CartComponent}
 ];

@@ -1,4 +1,4 @@
-import { Component, Inject, NgModule, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, Optional } from '@angular/core';
 import { UserService} from '../user.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -11,7 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-profile',
-  imports: [MatButtonModule, MatDialogModule, MatIconModule, MatCardModule, MatFormFieldModule, NgIf, FormsModule, MatInputModule, ],
+  imports: [MatButtonModule, MatDialogModule, MatIconModule, MatCardModule, MatFormFieldModule, NgIf, FormsModule, MatInputModule, MatDialogModule],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css',
   providers: [ UserService ]
@@ -20,8 +20,13 @@ export class ProfileComponent implements OnInit{
 
    public isEditing: boolean = false;
    public profileForInput!: any;
-   constructor(@Inject(MAT_DIALOG_DATA) public data: any, public UserService: UserService)
-   {}
+
+
+   constructor(
+    @Inject (MAT_DIALOG_DATA) public data: any, public UserService: UserService)
+   {
+    console.log(this.data.user)
+   }
 
   ngOnInit(): void {
       this.profileForInput = {

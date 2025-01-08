@@ -40,4 +40,5 @@ removeFromCart (item: any){
     
 }
 
+
 }

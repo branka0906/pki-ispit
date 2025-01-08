@@ -26,6 +26,8 @@
 .right-side a {
     margin-left: 20px;
     font-size: 15px;
+    background-color: #343131!important;
+
 }
 button {
     display: flex;

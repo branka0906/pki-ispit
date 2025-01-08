@@ -114,9 +114,5 @@ reserveMovie(movie: any) {
   this.cartService.addToCart(movie);
   alert(`${movie.ime} je dodat u korpu!`);
 }
-goToCart(): void {
-  this.router.navigate(['/cart'], { state: { reservations: this.reservations } });
-}
-
 
 }

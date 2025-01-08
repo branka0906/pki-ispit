@@ -1,8 +1,40 @@
-mat-toolbar {
-    background-color: #343131; 
-    margin-left: auto;
-    margin-right: auto;
-
+.toolbar {
+    background-color: #343131;
+    height: 65px;
+    display: flex;
+    color: beige;
+    text-decoration: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.left-side {
+    display: flex;
+    align-items: center;
+}
+.left-side a {
+    margin-right: 20px;
+}
+.right-side {
+    display: flex;
+    align-items: center;
+}
+.right-side a {
+    margin-left: 20px;
+    font-size: 15px;
+    
+}
+button {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background-color: #343131!important;
+    color: beige !important;
+    margin-left: 10px !important;
+}
+button mat-icon {
+    margin-right: 8px;
+    color: beige !important;
 }
 a {
     color: beige;
@@ -11,11 +43,11 @@ a {
 a:hover {
     color: black;
 }
-mat-toolbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+ mat-icon {
+    font-size: 25px;
+    margin-top: 4px;
 }
+
 mat-tab-group {
     width: 1700px;
     height: 100%;
@@ -23,6 +55,10 @@ mat-tab-group {
     margin-right: auto;
     padding-top: 30px;
 }
-button {
-    color: #343131 !important;
+
+a:hover {
+    color:black;
+}
+button > a {
+    color:beige !important;
 }
