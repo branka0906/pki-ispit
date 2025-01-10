@@ -11,18 +11,19 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { ProfileComponent } from '../auth/profile/profile.component';
 import { NgIf } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
+import { CartService } from '../cart/cart.service';
 @Component({
   selector: 'app-home',
   imports: [MatToolbar, MatIconModule, MatTabsModule, InCinemaComponent, SoonComponent,RecomendedComponent, RouterLink, NgIf, MatButtonModule, MatDialogModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
-  providers:  [ UserService ]
+  providers:  [ UserService, CartService ]
 })
 export class HomeComponent {
 
     profileOpened: boolean= false;
 
-    constructor(public userService: UserService, public dialog: MatDialog){}
+    constructor(public userService: UserService, public dialog: MatDialog, private cartService: CartService ){}
 
     openProfile(userId: number){
       this.profileOpened = true;
@@ -38,6 +39,11 @@ export class HomeComponent {
         this.profileOpened = false;
       })
     }
+    reserveMovie(movie: any) {
+      this.cartService.addToCart(movie);
+      alert(`${movie.ime} je dodat u korpu!`);
+    }
+    
 
 
   }

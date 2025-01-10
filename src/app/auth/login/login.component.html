@@ -10,17 +10,17 @@
 <section>
     <form #f="ngForm" (ngSubmit)="onSubmit(f)">
       <mat-form-field>
-        <input type="text" matInput placeholder="Unesite svoje ime" ngModel name="text" #emailInput="ngModel" required>
+        <input type="text" matInput placeholder="Unesite svoj email" ngModel name="email" #emailInput="ngModel" required>
         <mat-error *ngIf="emailInput.hasError('required')"> Polje ne sme biti prazno!</mat-error>
       </mat-form-field>
       <mat-form-field>
-        <input type="password" matInput placeholder="Unesite lozinku" ngModel="password" name="password" required minlength="8"
+        <input type="password" matInput placeholder="Unesite lozinku" ngModel  name="password" required minlength="8"
         #passInput="ngModel">
         <mat-hint align="end">{{passInput.value?.length}} / 8 </mat-hint>
       </mat-form-field>
         <button type="submit" mat-raised-button color="warn" [disabled]="f.invalid"> Prijavi se</button>
         <mat-label *ngIf="errorExists">{{errorText}}</mat-label>
-        <a class="register" routerLink="/signup" >Nemate nalog? Registrujte se.</a>
+        <a class="register" routerLink="/register" >Nemate nalog? Registrujte se.</a>
       </form>
      </section>
     </mat-card-content>

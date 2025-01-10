@@ -9,29 +9,29 @@
     <section>
     <form #f="ngForm" (ngSubmit)="onSubmit(f)">
       <mat-form-field>
-        <input matInput placeholder="Unesite svoje ime" ngModel name="text" #imelInput="ngModel" required>
+        <input matInput placeholder="Unesite svoje ime" ngModel name="ime" #imelInput="ngModel" required>
         <mat-error *ngIf="imelInput.hasError('required')">Polje ne može biti prazno.</mat-error>
     </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Unesite svoje prezime" ngModel name="text" #prezimeInput="ngModel" required>
+        <input matInput placeholder="Unesite svoje prezime" ngModel name="prezime" #prezimeInput="ngModel" required>
         <mat-error *ngIf="prezimeInput.hasError('required')">Polje ne može biti prazno.</mat-error>
     </mat-form-field>
         <mat-form-field>
-        <input matInput placeholder="Unesite svoju email adresu" ngModel name="text" #emailInput="ngModel" required>
+        <input matInput placeholder="Unesite svoju email adresu" ngModel name="email" #emailInput="ngModel" required>
         <mat-error *ngIf="emailInput.hasError('required')">Polje ne može biti prazno.</mat-error>
     </mat-form-field>
     <mat-form-field>
-        <input type="password" matInput placeholder="Unesite lozinku" ngModel="password" name="password" required minlength="8"
+        <input type="password" matInput placeholder="Unesite lozinku" ngModel name="password" required minlength="8"
       #passInput="ngModel">
       <mat-hint align="end">{{passInput.value?.length}} / 8 </mat-hint>
      </mat-form-field>
     <mat-form-field>
-        <input  matInput placeholder="Unesite adresu" ngModel="address" name="address" required name="text"
+        <input  matInput placeholder="Unesite adresu" ngModel name="address" required name="address"
       #addrInput="ngModel">
     <mat-error *ngIf="addrInput.hasError('required')">Polje ne može biti prazno.</mat-error>
     </mat-form-field>
     <mat-form-field>
-        <input matInput placeholder="Unesite broj telefona" ngModel name="text" #contInput="ngModel" required>
+        <input matInput placeholder="Unesite broj telefona" ngModel name="contact" #contInput="ngModel" required>
         <mat-error *ngIf="contInput.hasError('required')">Polje ne može biti prazno.</mat-error>
     </mat-form-field>
     <mat-form-field>

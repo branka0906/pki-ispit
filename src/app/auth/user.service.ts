@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { using } from "rxjs";
 
 export interface User {
     id: number;
@@ -69,8 +70,9 @@ export class UserService {
     currentUser: User | null = null;
 
     constructor () {
-        this.currentUser = UserService.userlist[0];
+       this.currentUser = UserService.userlist[0];
     }
+    
 
     getUserName (user: User): string {
         return user.email;
