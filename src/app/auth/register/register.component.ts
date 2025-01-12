@@ -43,7 +43,14 @@ export class RegisterComponent {
       onSubmit(form: NgForm){
       if(!this.userService.getUser(form.value.email)){
        this.errorExists = false;
-       var newUser = this.userService.registerUser(form.value.ime, form.value.prezime, form.value.email, form.value.password, form.value.address, form.value.contact, form.value.dateBirth);
+       var newUser = this.userService.registerUser(
+        form.value.ime, 
+        form.value.prezime, 
+        form.value.email, 
+        form.value.password, 
+        form.value.address, 
+        form.value.contact, 
+        form.value.dateBirth);
 
        this.router.navigate(['/login']);
      } else {
