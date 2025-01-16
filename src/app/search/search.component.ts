@@ -39,7 +39,7 @@ import { CartService } from '../cart/cart.service';
   providers: [MovieService, UserService, CartService]
 })
 export class SearchComponent implements OnInit{
-  movies: any[]=[];
+  movies: any [] = [];
   search: string = '';
   filteredMovies: Movie [] = [];
   profileOpened: boolean = false;
